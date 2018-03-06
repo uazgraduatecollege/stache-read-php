@@ -1,0 +1,30 @@
+{
+    "name": "uagradcoll/php-stache-read",
+    "description": "A Stache API Client for PHP applications",
+    "keywords": ["stache"],
+    "type": "package",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8|^5.7"
+    },
+    "license": "Copyright (c) 2017 Arizona Board of Regents, all rights reserved",
+    "authors": [
+        {
+            "name": "University of Arizona Graduate College",
+            "email": "help@grad.arizona.edu"
+        },
+        {
+            "name": "Patrick Barabe",
+            "email": "pbarabe@email.arizona.edu"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    },
+    "version": "0.1.0",
+    "minimum-stability": "dev"
+}
