@@ -1,5 +1,5 @@
 {
-    "name": "uagradcoll/php-stache-read",
+    "name": "uagradcoll/stache-reader",
     "description": "A Stache API Client for PHP applications",
     "keywords": ["stache"],
     "type": "package",
