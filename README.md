@@ -30,7 +30,7 @@ At mimimun, the following should be in to your `composer.json` file:
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@bitbucket.org:uazgraduatecollege/stacheread-js.git"
+            "url": "git@bitbucket.org:uazgraduatecollege/stache-reader.git"
         }
     ]
 }
