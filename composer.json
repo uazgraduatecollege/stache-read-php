@@ -35,6 +35,10 @@
         "test": [
             "echo 'Running unit tests...'",
             "./vendor/bin/phpunit --bootstrap vendor/autoload.php --testdox tests/Uagc/StacheReaderTest"
+        ],
+        "php5Test": [
+            "echo 'Running unit tests...'",
+            "./vendor/bin/phpunit --bootstrap vendor/autoload.php --testdox tests/php5/Uagc/StacheReaderTest"
         ]
     }
 }

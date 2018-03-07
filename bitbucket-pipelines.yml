@@ -8,7 +8,7 @@ pipelines:
           - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
           - composer -V
           - composer install
-          - composer test
+          - composer php5Test
     - step:
         name: PHP 7 test
         image: php:7.0

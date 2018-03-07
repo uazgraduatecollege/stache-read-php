@@ -10,7 +10,7 @@ test:5:
   image: php:5
   script:
     - ./composer.phar install
-    - ./composer.phar test
+    - ./composer.phar php5Test
   tags:
     - docker
 
