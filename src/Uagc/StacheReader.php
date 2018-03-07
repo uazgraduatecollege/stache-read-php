@@ -7,14 +7,14 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
 
 /**
- * StacheRead
+ * StacheReader
  *
  * A client for the Stache API
  *
  * @method object get(string $item, string $key)
  *
  */
-class StacheRead
+class StacheReader
 {
 
     /**
@@ -33,21 +33,48 @@ class StacheRead
      * - protocol: (string) Request protocol. Defaults to 'https'
      * - port: (string) Request port. Defaults to 443
      * - domain: (string) Domain of the API host. Required. Defaults to null.
-     * - user_agent: (string) Request User-Agent. Defaults to 'UA Graduate College StacheRead for PHP'
+     * - user_agent: (string) Request User-Agent. Defaults to 'UA Graduate College StacheReader for PHP'
      *
      * @param array $params Client configuration settings
      */
-    public function __construct($params)
+    public function __construct($params = array())
     {
         $protocol = !empty($params['protocol']) ? $params['protocol'] : 'https';
-        $port = !empty($params['port']) ? $params['ports'] : '443';
+        $port = !empty($params['port']) ? $params['port'] : '443';
         $apiPath = !empty($params['path']) ? $params['path'] : '/api/v1/item/read/';
-        $domain = $params['domain'];
-
-        $this->stacheUrl = $protocol . '://' . $domain . ':' . $port . $apiPath;
+        $domain = !empty($params['domain']) ? $params['domain'] : null;
         $this->userAgent = !empty($params['user_agent']) ?
             $params['user_agent'] :
-            'UA Graduate College StacheRead for PHP';
+            'UA Graduate College StacheReader for PHP';
+
+        // validate params
+        if (!in_array($protocol, ['http', 'https'])) {
+            throw new \InvalidArgumentException(
+                'Protocol is invalid: ' . $protocol
+            );
+        }
+        if (!is_numeric($port)) {
+            throw new \InvalidArgumentException(
+                'Port is invalid: ' . $port
+            );
+        }
+        if (!is_string($apiPath)) {
+            throw new \InvalidArgumentException(
+                'API Path is invalid: ' . $apiPath
+            );
+        }
+        if (!is_string($domain)) {
+            throw new \InvalidArgumentException(
+                'Domain is invalid: ' . $domain
+            );
+        }
+        if (!is_string($this->userAgent)) {
+            throw new \InvalidArgumentException(
+                'User-Agent is invalid: ' . $this->userAgent
+            );
+        }
+
+        $this->stacheUrl = $protocol . '://' . $domain . ':' . $port . $apiPath;
         $this->client = new \GuzzleHttp\Client();
     }
 
@@ -62,7 +89,9 @@ class StacheRead
     public function read($item=null, $key=null)
     {
         if (empty($item) || empty($key)) {
-            throw new \Exception('The item, key, or both were not specified');
+            throw new \InvalidArgumentException(
+                'The item, key, or both were not specified'
+            );
         }
 
         $headers = [

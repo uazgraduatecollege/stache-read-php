@@ -26,5 +26,15 @@
         }
     },
     "version": "0.1.0",
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "scripts": {
+        "plaintest": [
+            "echo 'Running unit tests...'",
+            "./vendor/bin/phpunit --bootstrap vendor/autoload.php tests/Uagc/StacheReaderTest"
+        ],
+        "test": [
+            "echo 'Running unit tests...'",
+            "./vendor/bin/phpunit --bootstrap vendor/autoload.php --testdox tests/Uagc/StacheReaderTest"
+        ]
+    }
 }
