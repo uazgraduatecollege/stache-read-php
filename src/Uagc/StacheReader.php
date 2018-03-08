@@ -16,6 +16,10 @@ use GuzzleHttp\Psr7\Request;
  */
 class StacheReader
 {
+    /**
+     * @var $client object The GuzzleHttp client
+     */
+    private $client;
 
     /**
      * @var $stacheUrl string The URL of the Stache API
@@ -132,4 +136,3 @@ class StacheReader
     {
     }
 }
-

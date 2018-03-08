@@ -21,7 +21,7 @@ $ composer install
 
 ### Installation as an Composer Package Dependency
 
-At mimimun, the following should be in to your `composer.json` file:
+At minimum, the following should be in to your `composer.json` file:
 ```json
 {
     "require": {
