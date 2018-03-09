@@ -1,6 +1,6 @@
 # StacheReader for PHP
 
-A simple PHP packacge for querying items stored in Stache
+A simple PHP package for querying items stored in Stache
 
 ## Requirements
 
@@ -72,6 +72,11 @@ A Promise-based query. Not yet implemented.
 ## About
 
 StacheReader for PHP is a port of [StacheRead JS](https://bitbucket.org/uazgraduatecollege/stacheread-js).
+
+
+## License
+
+Copyright (c) 2018 Arizona Board of Regents on behalf of the University of Arizona, all rights reserved
 
 
 ## Status
