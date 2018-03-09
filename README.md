@@ -38,9 +38,15 @@ At minimum, the following should be in to your `composer.json` file:
 
 ## Usage
 
-### StacheReader.read()
+StacheReader implements the following methods:
+
+### StacheReader::read($params)
 
 ```php
+// What you do here may depend on how you do autoloading.
+// If installed w/Composer, this should be sufficient.
+use Uagc\StacheReader;
+
 $mySr = new StacheReader([
     'domain' => getenv('STACHE_TEST_DOMAIN')// 'som.domain.edu',
 ]);
@@ -58,7 +64,7 @@ try {
 }
 ```
 
-### StacheR.fetch()
+### StacheR::fetch()
 
 A Promise-based query. Not yet implemented.
 
