@@ -25,7 +25,7 @@ At minimum, the following should be in to your `composer.json` file:
 ```json
 {
     "require": {
-        "uagradcoll/stache-reader": "dev-master"
+        "uagradcoll/stache-reader": "0.1.0"
     },
     "repositories": [
         {
